@@ -4,19 +4,39 @@ import java.util.Scanner;
 
 public class runnerWageComputation {
 	public static void main(String[] args) {
-		System.out.println("Just starting out with the program.");
 		
-		Company firstCompany = new Company();
+		System.out.println("This is calculation for first company with 5 employees\n\n");
+		
+		Company firstCompany = new Company(8 , 6, 20);
 		
 		firstCompany.addEmployee(1, true);
-		//firstCompany.addEmployee(2, true);
+		firstCompany.addEmployee(2, true);
 		firstCompany.addEmployee(3, false);
 		firstCompany.addEmployee(4, true);
 		firstCompany.addEmployee(5, false);
-		//firstCompany.addEmployee(6, true);
 		
 		
-		Scanner sc = new Scanner(System.in);
+		System.out.println("Monthly wage for the added employees is : " + firstCompany.calculateMonthlyWage(firstCompany));
+		
+		
+		
+		
+		System.out.println("\n\nThis is calculation for second company with 5 employees \n\n");
+		
+		
+		Company secondCompany = new Company(9 , 5, 22);
+		
+		secondCompany.addEmployee(11, true);
+		secondCompany.addEmployee(12, true);
+		secondCompany.addEmployee(13, false);
+		secondCompany.addEmployee(14, true);
+		secondCompany.addEmployee(15, false);
+		
+		System.out.println("Monthly wage for the added employees is : " + secondCompany.calculateMonthlyWage(secondCompany));
+		
+		
+		
+		/*Scanner sc = new Scanner(System.in);
 		boolean masterSwicthFlag = true;
 		
 		
@@ -63,7 +83,7 @@ public class runnerWageComputation {
 				}
 				
 			}
-		sc.close();
+			sc.close(); */
 		
 	}
 

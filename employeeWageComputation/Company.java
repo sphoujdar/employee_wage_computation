@@ -3,15 +3,22 @@ package employeeWageComputation;
 import java.util.ArrayList;
 
 public class Company {
+	
 	ArrayList<Employee> roster = new ArrayList<Employee>();
 	
-	final int fullDayHour = 8;
-	final int halfDayHour = 6;
-	
-	final int wagePerHour = 20;
-	
+	int fullDayHour;
+	int halfDayHour;
+	int wagePerHour;
 	
 	
+	
+	public Company(int fullDayHour, int halfDayHour, int wagePerHour) {
+		super();
+		this.fullDayHour = fullDayHour;
+		this.halfDayHour = halfDayHour;
+		this.wagePerHour = wagePerHour;
+	}
+
 	public void addEmployee(int emp_id , boolean emp_type) {
 		Employee newEmployee = new Employee();
 		newEmployee.setEmployeeID(emp_id);
@@ -19,11 +26,11 @@ public class Company {
 		roster.add(newEmployee);
 	}
 	
-	public int calculateMonthlyWage() {
+	public int calculateMonthlyWage(Company tempObject) {
 		int monthlyWage = 0; 
 		for (Employee currentEmployee : roster) {
 			monthlyWage += monthlyWage + calculateEmployeeWage(wagePerHour, currentEmployee);
-			currentEmployee.viewEmployeeData();
+			currentEmployee.viewEmployeeData(tempObject);
 		}
 		
 		return monthlyWage;

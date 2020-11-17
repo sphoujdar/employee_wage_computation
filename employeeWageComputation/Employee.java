@@ -27,9 +27,8 @@ public class Employee {
 	boolean employeeType;
 	boolean[] employeeMonthlyAttendance = new boolean[35];
 	
-	public void viewEmployeeData() {
+	public void viewEmployeeData(Company tempObject) {
 		
-		Company tempObject = new Company();
 		int tempEmployeeWorkingHours = 0 ;
 		
 		if (this.employeeType) {System.out.println("Emp ID : " + this.employeeID + " works as Full Time employee."); tempEmployeeWorkingHours = tempObject.fullDayHour;}
