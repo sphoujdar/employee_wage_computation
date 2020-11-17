@@ -22,34 +22,35 @@ public class Company {
 	public int calculateMonthlyWage() {
 		int monthlyWage = 0; 
 		for (Employee currentEmployee : roster) {
-			
-			
-			int daysAttended = 0;  
-			for (int dayOfMonth = 0 ; dayOfMonth < currentEmployee.employeeMonthlyAttendance.length ; dayOfMonth++) {
-				
-				if(currentEmployee.employeeMonthlyAttendance[dayOfMonth]) {
-					daysAttended+=1;
-				}
-			}
-			
-			
-			int currentEmployeeWagePerDay;
-			if (currentEmployee.employeeType) {
-				currentEmployeeWagePerDay = wagePerHour*fullDayHour;
-			}else {
-				currentEmployeeWagePerDay = wagePerHour*halfDayHour;
-			}
-			
-			monthlyWage += monthlyWage + (daysAttended*currentEmployeeWagePerDay);
-			
+			monthlyWage += monthlyWage + calculateEmployeeWage(wagePerHour, currentEmployee);
 			currentEmployee.viewEmployeeData();
 		}
 		
 		return monthlyWage;
 	}
 	
-	public int calculateEmployeeWage (){
-		return 0;
+	public int calculateEmployeeWage (int wagePerHour, Employee currentEmployee){
+
+		int daysAttended = 0;  
+		for (int dayOfMonth = 0 ; dayOfMonth < currentEmployee.employeeMonthlyAttendance.length ; dayOfMonth++) {
+			
+			if(currentEmployee.employeeMonthlyAttendance[dayOfMonth]) {
+				daysAttended+=1;
+			}
+		}
+		
+		
+		int currentEmployeeWagePerDay;
+		if (currentEmployee.employeeType) {
+			currentEmployeeWagePerDay = wagePerHour*fullDayHour;
+		}else {
+			currentEmployeeWagePerDay = wagePerHour*halfDayHour;
+		}
+		
+		int currentEmployeeWageForMonth = currentEmployeeWagePerDay*daysAttended;
+		
+		return currentEmployeeWageForMonth;
+		
 	}
 	
 }

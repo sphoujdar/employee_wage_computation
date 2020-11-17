@@ -24,7 +24,7 @@ public class runnerWageComputation {
 			
 			System.out.println("Menu : \n\n"
 					+ "1. Add an Employee \n"
-					+ "2. Calculate Monthly wage Bill\n"
+					+ "2. Calculate and show Monthly wage Bill\n"
 					+ "9. Exit");
 			String expression = sc.nextLine();
 			
