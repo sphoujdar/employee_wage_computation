@@ -27,6 +27,18 @@ public class Employee {
 	boolean employeeType;
 	boolean[] employeeMonthlyAttendance = new boolean[35];
 	
+	public void viewEmployeeData() {
+		
+		if (this.employeeType) {System.out.println("Emp ID : " + this.employeeID + " works as Full Time employee.");}
+		else {System.out.println("Emp ID : " + this.employeeID + " works as Part Time employee.");}
+		
+		for (int attendanceDay = 0 ; attendanceDay < this.employeeMonthlyAttendance.length ; attendanceDay++) {
+			if (this.employeeMonthlyAttendance[attendanceDay]) {
+				System.out.println(this.employeeID + " was present on day" + (attendanceDay+1));	
+			}
+		}
+	}
+	
 	
 	public Employee() {
 		super();

@@ -9,10 +9,10 @@ public class runnerWageComputation {
 		
 		firstCompany.addEmployee(1, true);
 		firstCompany.addEmployee(2, true);
-		firstCompany.addEmployee(3, true);
-		firstCompany.addEmployee(4, true);
-		firstCompany.addEmployee(5, true);
-		firstCompany.addEmployee(6, true);
+		//firstCompany.addEmployee(3, true);
+		//firstCompany.addEmployee(4, true);
+		//firstCompany.addEmployee(5, true);
+		//firstCompany.addEmployee(6, true);
 		
 		System.out.println("Monthly wage for the added employees is : " + firstCompany.calculateMonthlyWage());
 		

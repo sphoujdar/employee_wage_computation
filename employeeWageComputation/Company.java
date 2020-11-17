@@ -40,9 +40,9 @@ public class Company {
 				currentEmployeeWagePerDay = wagePerHour*halfDayHour;
 			}
 			
-			
 			monthlyWage += monthlyWage + (daysAttended*currentEmployeeWagePerDay);
 			
+			currentEmployee.viewEmployeeData();
 		}
 		
 		return monthlyWage;
