@@ -29,12 +29,15 @@ public class Employee {
 	
 	public void viewEmployeeData() {
 		
-		if (this.employeeType) {System.out.println("Emp ID : " + this.employeeID + " works as Full Time employee.");}
-		else {System.out.println("Emp ID : " + this.employeeID + " works as Part Time employee.");}
+		Company tempObject = new Company();
+		int tempEmployeeWorkingHours = 0 ;
+		
+		if (this.employeeType) {System.out.println("Emp ID : " + this.employeeID + " works as Full Time employee."); tempEmployeeWorkingHours = tempObject.fullDayHour;}
+		else {System.out.println("Emp ID : " + this.employeeID + " works as Part Time employee."); tempEmployeeWorkingHours = tempObject.halfDayHour;}
 		
 		for (int attendanceDay = 0 ; attendanceDay < this.employeeMonthlyAttendance.length ; attendanceDay++) {
 			if (this.employeeMonthlyAttendance[attendanceDay]) {
-				System.out.println(this.employeeID + " was present on day" + (attendanceDay+1));	
+				System.out.println(this.employeeID + " was present on day" + (attendanceDay+1) + ". His wage for the day is " + tempEmployeeWorkingHours*tempObject.wagePerHour );	
 			}
 		}
 	}

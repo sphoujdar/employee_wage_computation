@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Company {
 	ArrayList<Employee> roster = new ArrayList<Employee>();
 	
-	int fullDayHour = 8;
-	int halfDayHour = 6;
+	final int fullDayHour = 8;
+	final int halfDayHour = 6;
 	
-	int wagePerHour = 20;
+	final int wagePerHour = 20;
 	
 	
 	
