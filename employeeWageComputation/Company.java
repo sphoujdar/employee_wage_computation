@@ -48,4 +48,8 @@ public class Company {
 		return monthlyWage;
 	}
 	
+	public int calculateEmployeeWage (){
+		return 0;
+	}
+	
 }
